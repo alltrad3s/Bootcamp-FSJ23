@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Portfolio | Jorge Diaz</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container" id="home">
+        <header class="header">
+            <nav class="navbar">
+                <!--
+                    Comenzamos por utilizar un section para el logo/nombre de la web
+                -->
+                <section class="logo">
+                    <h2>Jorge Diaz's Portfolio</h2>
+                </section>
+                <!--
+                    No es necesario utilizar un section para los UL u OL ya qu en si son un contendor de elementos.
+                -->
+                <ul class="menu">
+                    <!-- 
+                        Con Emmet se escribe li*4 y se presiona tab para insertar multiple elementos
+                    -->
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#">Contact Me</a></li>
+                </ul>
+            
+            </nav>
+        </header>
+        
+        <main class="main-content" id="about">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Jorge Diaz</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure voluptate architecto non tempore ea saepe est, quibusdam modi. Sed fuga facilis omnis odio ipsa molestiae laborum hic nesciunt in suscipit.</p>
+                    <div class="button">
+                        <a href="http://jorgediaz.net/wp-content/uploads/2022/01/Jorge-Alberto-Diaz-Resume.pdf" target="_blank" class="link">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./images/perfil.png" class="hero-profile-image" alt="Foto Jorge Diaz">
+                </div>
+            </section>
+            <section id="projects">
+                <h1>Projects</h1>
+                <div class="projects">
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="./images/jorgediaze.png" alt="">
+                        </div>
+                        <div class="card-title">
+                            <h4>Jorge Diaz<sup>e</sup></h4>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://jorgediaz.net" target="_blank" class="card-link">Visit</a>
+                            <a href="https://github.com/alltrad3s/jorgediaz-emprende" target="_blank" class="card-link">GibHub</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="./images/beersncode.png" alt="">
+                        </div>
+                        <div class="card-title">
+                            <h4>Beers & Code</h4>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://beersncode.com" target="_blank" class="card-link">Visit</a>
+                            <a href="https://github.com/alltrad3s/beersncode" target="_blank" class="card-link">GibHub</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="./images/alltrad3s-website.png" alt="">
+                        </div>
+                        <div class="card-title">
+                            <h4>Alltrad3s Website</h4>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://alltrad3s.website" target="_blank" class="card-link">Visit</a>
+                            <a href="https://github.com/alltrad3s/alltrad3s-website" target="_blank" class="card-link">GibHub</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>

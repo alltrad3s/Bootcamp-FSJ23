@@ -1,0 +1,184 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* END FONTS */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    width: 100vw;
+}
+
+/* 
+
+HEADER
+
+*/
+.header {
+    background: #0F232E;
+}
+
+nav h2 {
+    color: #F7AC32;
+}
+
+.header .navbar {
+    display: flex;
+    color: #F7AC32;
+    justify-content: space-between;
+    padding: 2rem 6rem;
+}
+
+.header .navbar .logo {
+    font-size: 1.5em;
+}
+
+.header .navbar .menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header .navbar .menu li {
+    list-style: none;
+    margin-top: 0.7rem;
+}
+
+.header .navbar .menu a {
+    color: #F7AC32;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 1.2rem;
+    font-weight: 600;
+}
+
+.header .navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+/* 
+
+BODY
+
+*/
+.main-content {
+
+}
+
+/* 
+
+BODY - HERO
+
+*/
+.main-content .hero {
+    margin: 0 auto;
+    padding: 3rem 25rem;
+    background: #0F232E;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.main-content .hero .hero-content {
+
+}
+
+.main-content .hero .hero-content h1 {
+    color: #F7AC32;
+    font-size: 3em;
+    padding-bottom: 10px;
+}
+
+.main-content .hero .hero-content p {
+    color: #Ffffff;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+
+.hero-content .button {
+    padding: 2.5rem 0;
+    font-weight: 300;
+}
+
+.hero-content .link {
+    background: #F7AC32;
+    color: #ffffff;
+    padding: 1.1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: -7px 7px #B85A23;
+}
+
+.hero-image {
+    margin: auto;
+}
+
+.hero-image .hero-profile-image {
+    border-radius: 20px;
+    box-shadow: -30px 20px rgba(0, 0, 0, 0.3);
+    width: 25em;
+}
+
+/* 
+
+BODY - PROJECTS
+
+*/
+.main-content .projects {
+    margin: 0 auto;
+    padding: 0 25rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.main-content #projects h1 {
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: -10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-title h4 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+    padding-top: 1em;
+}
+
+.card-links {
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.card-link {
+    background: #F7AC32;
+    color: #ffffff;
+    padding: 1.1rem;
+    margin: 0 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: -7px 7px #B85A23;
+}
