@@ -10,6 +10,7 @@
 body {
     background-color: #ffffff;
     font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
@@ -78,12 +79,19 @@ BODY - HERO
 */
 .main-content .hero {
     margin: 0 auto;
-    padding: 3rem 25rem;
+    padding: 3rem 10rem;
     background: #0F232E;
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 1.5rem;
     align-items: center;
+}
+
+@media (max-width: 900px) { 
+    .main-content .hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 5rem;
+    }
 }
 
 .main-content .hero .hero-content {
@@ -128,18 +136,31 @@ BODY - HERO
     width: 25em;
 }
 
+@media (max-width: 900px) { 
+    .hero-image .hero-profile-image {
+        width: 35em;
+    }
+}
+
 /* 
 
 BODY - PROJECTS
 
 */
 .main-content .projects {
-    margin: 0 auto;
-    padding: 0 25rem;
+    margin: 0 auto 5rem auto;
+    padding: 0 10rem;
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     gap: 2rem;
     align-items: center;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 900px) { 
+    .main-content .projects {
+        grid-template-columns: 1fr; 
+    }
 }
 
 .main-content #projects h1 {
@@ -181,4 +202,11 @@ BODY - PROJECTS
     text-decoration: none;
     text-transform: uppercase;
     box-shadow: -7px 7px #B85A23;
+}
+
+@media (max-width: 900px) { 
+    .card-link {
+        padding: 0.5rem;
+        margin: 0 5px;
+    }
 }
