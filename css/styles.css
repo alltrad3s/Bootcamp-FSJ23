@@ -19,7 +19,7 @@ body {
 
 /* 
 
-HEADER
+HEADER.
 
 */
 .header {
@@ -208,5 +208,78 @@ BODY - PROJECTS
     .card-link {
         padding: 0.5rem;
         margin: 0 5px;
+    }
+}
+
+/* 
+
+BODY - CONTACT
+CHATGPT GEN
+
+*/
+/* Contact Section */
+.contact {
+    background: #0F232E;
+    padding: 3rem 10rem;
+    color: #F7AC32;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h1 {
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px; /* Adjust the width for a more stylish look */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1.3em;
+    padding-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    font-size: 1em;
+    border: none; /* Remove border */
+    border-radius: 5px;
+    outline: none; /* Remove outline */
+}
+
+.form-group button {
+    padding: 1rem;
+    font-size: 1.2em;
+    background: #F7AC32;
+    color: #ffffff;
+    border: none; /* Remove border */
+    border-radius: 10px;
+    text-transform: uppercase;
+    box-shadow: -7px 7px #B85A23;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background: #e69528;
+}
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 900px) {
+    .contact {
+        padding: 3rem 5rem;
     }
 }
