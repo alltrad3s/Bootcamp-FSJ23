@@ -1,6 +1,7 @@
 import { RegisterForm } from "./components/RegisterForm"
 import { LoginForm } from "./components/LoginForm"
 import { useState } from "react"
+import Logo from "../../assets/images/Full-Stack-Jr.webp"
 
 export const Session = () => {
   const [typeForm, setTypeForm] = useState("");
@@ -11,7 +12,7 @@ export const Session = () => {
           <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div className="mx-auto w-full max-w-sm lg:w-96">
               <div>
-                <img className="h-10 w-auto" src="https://cdn-knihf.nitrocdn.com/ibKONdxVNJApfXYlVVFSuGXgWUgPJrvN/assets/images/optimized/rev-826ee6b/kodigowebstorage.blob.core.windows.net/kodigowebsite/2023/11/Full-Stack-Jr@4x-1.webp" alt="Your Company" />
+                <img className="h-10 w-auto" src={Logo} alt="Your Company" />
               </div>
               <div className="mt-10">
                 <div>

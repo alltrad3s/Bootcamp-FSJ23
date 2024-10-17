@@ -3,12 +3,12 @@ import { Countries } from './pages/countries/Countries'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Home } from './pages/home/Home'
 import { Session } from './pages/session/Session'
-import { MyProvider } from './context/UserDataContext'
+import { UserProvider } from './context/UserDataContext'
 import { Dashboard } from './components/DashboardComponent'
 
 function App() {
   return (
-    <MyProvider>
+    <UserProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/dashboard" element={<Dashboard />}>
@@ -20,7 +20,7 @@ function App() {
           <Route path='*' element={<div>Not Found</div>} />
         </Routes>
       </BrowserRouter>
-    </MyProvider>
+    </UserProvider>
   )
 }
 

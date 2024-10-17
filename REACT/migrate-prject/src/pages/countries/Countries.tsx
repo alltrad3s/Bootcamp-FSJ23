@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useCountriesData } from "../../hooks/useCountriesData";
 import { ListCountries } from "./components/ListCountries";
 import { useRegions } from "../../hooks/useRegions";
@@ -7,8 +7,8 @@ import { LoadingComponent } from "./components/LoadingComponent";
 export const Countries = () => {
   const [region, setRegion] = useState('');
   const [name, setName] = useState('');
-  let countries = useCountriesData(region, name);
-  let uniqueRegions = useRegions();
+  const countries = useCountriesData(region, name);
+  const uniqueRegions = useRegions();
 
   return (
       <div className="mx-auto max-w-7xl">
