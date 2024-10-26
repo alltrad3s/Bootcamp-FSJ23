@@ -1,43 +1,43 @@
-import { useEffect, useState } from "react"
+import { useCountriesData } from "../hooks/useCountriesData"
+import { ListCountries } from "../countries/components/ListCountries"
+import { useState } from "react";
+import { useRegions } from "../hooks/useRegions";
+import { LoadingComponent } from "../components/LoadingComponent";
 
 export const Countries = () => {
-    //useEffect -> Ejecutar algo al momento de montar un componente
-    // --> Sincronizar datos, ejecutar algo en fase de actualizacion
-
-    //Hacemos usos de los estados, con la palabra countries la reservamos y setCountries es el estado que 
-    //utilizamos para guardar datos de la API que estamos consultando para pasar la informacion a los componentes 
-    //que lo necesiten
-    const [countries, setCountries] = useState([]);
-
-    const fetchCountries = async () => { //Con async le indicamos a la funcion que vamos a utilizar los await
-        let response = await fetch('https://restcountries.com/v3.1/all'); // Utilizamos await para que espere la respuesta.
-        let countryData = await response.json(); // Await nuevamente para que espere la respues y al recibirla, nos la muestre y la parsee a json
-        //console.log(response);
-        //console.log(countryData);
-        setTimeout(() => {//Simulamos carga de datos para que tome tiempo antes de mostrar la data
-            setCountries(countryData);
-        }, 3000);
-    }
-
-    useEffect(()=> {
-        //console.log("Hola Hola");
-        fetchCountries();
-        //console.log(countries);
-    },[] //Array de dependencia. Se ejecuta cuando esto cambie, si esta vacio, no tiene a que escuchar y no se va a ejecutar.
-) 
+    const [region,setRegion] = useState('');
+    const [name, setName] = useState('');
+    //recibiendo la informacion del hook useContriesData
+    let countries = useCountriesData(region, name);
+    let uniqueRegions = useRegions();
 
     return(
         <>
-            <h1>Countries FSJ23</h1>
-            {/*Renderizado condicional -> Opcion de mostrar un dato u otro */}
-            { countries.length > 0 ? countries.map( (country,index) => {
-               return <h3 key={index} >{country.name.common}</h3> } ) : (
-                <div className="flex flex-col items-center">
-                  <iframe src="https://lottie.host/embed/d075c402-1ed0-45c3-83b5-e19c8129ec40/oO1BA53nqt.json"></iframe>
-                  <h1>Loading...</h1>
+        <form className="w-full max-w-lg">
+            <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label htmlFor="region" className="block text-gray-700 text-sm mb-2">
+                        <p className="mt-2 text-lg leading-8 font-bold text-gray-600">Filter by Region</p>
+                            <select onChange={(e) => setRegion(e.target.value)} id="region" name="region" className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option value="">All</option>
+                                {uniqueRegions.map(region => (
+                                    <option key={region} value={region}>{region}</option>
+                                ))}
+                            </select>
+                    </label>
+                </div>          
+                <div className="w-full md:w-1/2 px-3">
+                        <label className="block text-gray-700 text-sm mb-2">
+                            <p className="mt-2 text-lg leading-8 font-bold text-gray-600">Country</p>
+                        </label>
+                        <input className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="Country"
+                            onChange={(e) => setName(e.target.value)}
+                        />
                 </div>
-              )
-            }
+            </div>
+        </form>
+            {/*Renderizado condicional -> Opcion de mostrar un dato u otro */}
+            { countries.length > 0 ? <ListCountries countries = {countries} /> : <LoadingComponent />}
         </>
     )
 }

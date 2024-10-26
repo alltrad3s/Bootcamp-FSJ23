@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css'
-import {Saludin} from './components/SaludinComponent'
+import { Saludin } from './components/SaludinComponent'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
     <>
         <h1>Hola llegamos a React, mi nombre es {nombreEstado} </h1>
         <button  onClick={() => cambiarValorEstado("Jorge")}>MAGIA</button>
-        <Saludin nombreUsuario="Judith" />
+        <Saludin nombreUsuario= {nombreEstado} />
     </>
   )
 }
