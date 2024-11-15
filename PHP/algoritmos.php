@@ -55,9 +55,9 @@ function insertionSort($array){
         $key = $array[$i];
         $j = $i - 1 ;
 
-        while($j >= 0 && $array[$j]>$key){
-            $array[$j+1] = $array[$j];
-            $j--;
+        while($j >= 0 && $array[$j]>$key){//Tiene que ser menor o igual a 0 y MAYOR/MENOR al valor actual | si cambiamos el caracter >, el orden se invierte
+            $array[$j+1] = $array[$j];//Mueve el dato en posicion j a la posicion siguiente
+            $j--; //Retrocedemos
         }     
         $array[$j+1] = $key;
     }

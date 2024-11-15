@@ -9,20 +9,22 @@
 
         $airlines = $_SESSION['airlines'];
         
-        if(isset( $_POST['id'],$_POST['name'],$_POST['aeroType'],$_POST['planes'])){
-            $mensajito = $_POST;
-            $name = $_POST['name'];
-            $id = $_POST['id'];
-            $aeroType = $_POST['aeroType'];
-            $planes = $_POST['planes'];
+        if(isset($_POST['create'])){
+            if(isset( $_POST['id'],$_POST['name'],$_POST['aeroType'],$_POST['planes'])){
+                $mensajito = $_POST;
+                $name = $_POST['name'];
+                $id = $_POST['id'];
+                $aeroType = $_POST['aeroType'];
+                $planes = $_POST['planes'];
 
-            $airline = new Airline($id,$name,$aeroType,$planes);
+                $airline = new Airline($id,$name,$aeroType,$planes);
 
-            array_push($airlines,$airline);
+                array_push($airlines,$airline);
 
-            $_SESSION['airlines'] = $airlines;
+                $_SESSION['airlines'] = $airlines;
+            }
         }
-        
+
         if(count($airlines) > 0){
             $arrayjito = $airlines;
         }
@@ -58,6 +60,22 @@
             }
         }
 
+        //Update Airline
+        if(isset($_POST['update'])){
+            //print_r($_POST);
+            foreach($airlines as $airline){
+                if($airline->id == $_POST['id']){
+                    $airline->name = $_POST['name'];
+                    $airline->aeroType = $_POST['aeroType'];
+                    $airline->planes = $_POST['planes'];
+                
+                header("Location: /AeroPHP/");
+                break;
+                }
+            }
+
+        }
+
         //Search for an specific airline
         function getAirlineByID($id, $airlines){
             foreach($airlines as $airline){
@@ -72,12 +90,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AeroPHP</title>
+    <title>CRUD Airlines</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 <body>
 <section class="container">
-<h1 class="title">Hola Vuela</h1>
+<div class="columns">
+    <div class="column">
+        <h1 class="title">CRUD Airlines</h1>
+    </div>
+</div>
+<hr />
 <div class="columns">
     <div class="column is-two-fifths">
     <?php if(isset($_GET['edit'])){ 
@@ -115,7 +138,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-primary is-light" type="submit">Update</button>
+                        <button class="button is-primary is-light" type="submit" name="update">Update</button>
                     </div>
                 </div>       
             </form>
@@ -157,7 +180,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-primary is-light" type="submit">Register</button>
+                        <button class="button is-primary is-light" type="submit" name="create">Register</button>
                     </div>
                 </div>       
             </form>
