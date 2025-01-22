@@ -63,25 +63,27 @@
             <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                 <thead>
                     <tr>
-                        <th>Project Name</th>
-                        <th>Technology</th>
-                        <th>Status</th>
-                        <th>Link</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>QTY</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($products as $product): ?>
                     <tr>
-                        <td>Project 1</td>
-                        <td>React</td>
-                        <td>Active</td>
-                        <td><a href="#"><i class="fab fa-github"></i></a></td>
+                        <th scope="row"><?php echo $product['id']?></th>
+                        <td><?php echo $product['nombre']?></td>
+                        <td><?php echo $product['precio']?></td>
+                        <td><?php echo $product['descuento']?></td>
+                        <td><?php echo $product['cantidad']?></td>
+                        <td><a href="./index.php?action=update&id=<?php echo $product['id']?>" class="btn btn-warning">Editar </a>
+                        <a href="./index.php?action=delete&id=<?php echo $product['id']?>" class="btn btn-danger">Eliminar </a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Project 2</td>
-                        <td>Node.js</td>
-                        <td>Completed</td>
-                        <td><a href="#"><i class="fab fa-github"></i></a></td>
-                    </tr>
+                <?php endforeach;?>
                 </tbody>
             </table>
             </div>
